@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Controls extends Component {
   render(props) {
     return (
-      <div className='controls-container'>
-      <div className='circular-container'>
+      <div className='controls-container' >
+      <div className='circular-container' id='circular-container' onMouseOver={this.props.rotate}>
         <div className='btn-menu'>Menu</div>
         <div className='btn-prev'>prev</div>
         <div className='btn-next'>next</div>
