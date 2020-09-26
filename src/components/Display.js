@@ -3,10 +3,10 @@ import React, { Component } from 'react';
 class Display extends Component {
   render(props) {
     const { main, cover, music, games, settings } = this.props.values;
-    const { active, songs, albums } = music;
+    const { active,select, songs, albums } = music;
     return (
-      <div className='display-container'>
-        {main ? (
+      <div id='bgr' className='display-container'>
+        { main ? (
           <div className='display-menu-container'>
             <ul className='main-options-list'>
               <span className='title'>Main Menu</span>
@@ -16,8 +16,9 @@ class Display extends Component {
               <li className={settings ? 'active-tab' : ''}>Settings</li>
             </ul>
           </div>
-        ):
-         (
+        ):null
+        }
+        { select? (
           <div className='music-menu-container'>
             <ul className='music-options-list'>
               <span className='title'>Music</span>
@@ -26,7 +27,7 @@ class Display extends Component {
               <li className={albums ? 'active-tab' : ''}>Albums</li>
             </ul>
           </div>
-        )}
+        ):null}
       </div>
     );
   }

@@ -113,6 +113,10 @@ body {
   color: white;
 }
 
+.active-tab::after{
+  content:'  ›' ;
+}
+
 .title {
   margin: 15px;
   font-weight: 900;

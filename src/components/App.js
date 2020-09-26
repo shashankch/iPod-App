@@ -120,9 +120,9 @@ class App extends Component {
   };
 
   musicMenufun = (props) => {
-    console.log('clicked');
-    const { active } = this.state.music;
-    if (active) {
+    //console.log('clicked');
+    const { cover, music, games, settings } = this.state;
+    if (music.active) {
       this.setState({
         main: false,
         cover: false,
@@ -135,14 +135,92 @@ class App extends Component {
         games: false,
         settings: false,
       });
+
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')";
+    } else if (music.songs) {
+      console.log('inside music song');
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1597946675872-368fd698fb8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80')";
+    } else if (music.albums) {
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')";
+    } else if (cover) {
+      this.setState({
+        main: false,
+        cover: false,
+        music: {
+          active: false,
+          select: false,
+          songs: false,
+          albums: false,
+        },
+        games: false,
+        settings: false,
+      });
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')";
+    } else if (games) {
+      this.setState({
+        main: false,
+        cover: false,
+        music: {
+          active: false,
+          select: false,
+          songs: false,
+          albums: false,
+        },
+        games: false,
+        settings: false,
+      });
+
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1556084123-fe76122cd5d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80')";
+    } else if (settings) {
+      this.setState({
+        main: false,
+        cover: false,
+        music: {
+          active: false,
+          select: false,
+          songs: false,
+          albums: false,
+        },
+        games: false,
+        settings: false,
+      });
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage =
+        "url('https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')";
     }
   };
 
-  menuback=(props)=>{
+  menuback = (props) => {
+    console.log('clicked');
+    this.setState({
+      main: true,
+      cover: false,
+      music: {
+        active: false,
+        select: false,
+        songs: false,
+        albums: false,
+      },
+      games: false,
+      settings: false,
+    });
+    const bgr = document.getElementById('bgr');
+    bgr.style.backgroundImage = '';
+  };
 
-    
+  gamesScreen = (props) => {};
 
-  }
+  settingsScreen = (props) => {};
 
   render() {
     return (
@@ -154,6 +232,8 @@ class App extends Component {
           values={this.state}
           musicMenufun={this.musicMenufun}
           menuback={this.menuback}
+          gamesScreen={this.gamesScreen}
+          settingsScreen={this.settingsScreen}
         />
       </div>
     );
