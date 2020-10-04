@@ -139,15 +139,17 @@ class App extends Component {
       const bgr = document.getElementById('bgr');
       bgr.style.backgroundImage =
         "url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')";
-    } else if (music.songs) {
-      console.log('inside music song');
-      const bgr = document.getElementById('bgr');
-      bgr.style.backgroundImage =
-        "url('https://images.unsplash.com/photo-1597946675872-368fd698fb8b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=615&q=80')";
-    } else if (music.albums) {
-      const bgr = document.getElementById('bgr');
-      bgr.style.backgroundImage =
-        "url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')";
+      if (music.songs) {
+        console.log('inside music song');
+        const bgr = document.getElementById('bgr');
+        bgr.style.backgroundImage =
+          "url('https://images.pexels.com/photos/5077423/pexels-photo-5077423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')";
+      }
+      if (music.albums) {
+        const bgr = document.getElementById('bgr');
+        bgr.style.backgroundImage =
+          "url('https://images.unsplash.com/photo-1535992165812-68d1861aa71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=637&q=80')";
+      }
     } else if (cover) {
       this.setState({
         main: false,
@@ -196,7 +198,7 @@ class App extends Component {
       });
       const bgr = document.getElementById('bgr');
       bgr.style.backgroundImage =
-        "url('https://images.unsplash.com/photo-1535303311164-664fc9ec6532?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80')";
+        "url('https://images.pexels.com/photos/270700/pexels-photo-270700.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')";
     }
   };
 
@@ -218,10 +220,6 @@ class App extends Component {
     bgr.style.backgroundImage = '';
   };
 
-  gamesScreen = (props) => {};
-
-  settingsScreen = (props) => {};
-
   render() {
     return (
       <div className='App'>
@@ -232,8 +230,6 @@ class App extends Component {
           values={this.state}
           musicMenufun={this.musicMenufun}
           menuback={this.menuback}
-          gamesScreen={this.gamesScreen}
-          settingsScreen={this.settingsScreen}
         />
       </div>
     );
