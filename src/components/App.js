@@ -127,7 +127,7 @@ class App extends Component {
         main: false,
         cover: false,
         music: {
-          active: true,
+          active: false,
           select: true,
           songs: false,
           albums: false,
@@ -141,12 +141,37 @@ class App extends Component {
         "url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')";
       if (music.songs) {
         console.log('inside music song');
+        this.setState({
+          main: false,
+          cover: false,
+          music: {
+            active: true,
+            select: false,
+            songs: false,
+            albums: false,
+          },
+          games: false,
+          settings: false,
+        })
         const bgr = document.getElementById('bgr');
         bgr.style.backgroundImage =
           "url('https://images.pexels.com/photos/5077423/pexels-photo-5077423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')";
       }
       if (music.albums) {
+        this.setState({
+          main: false,
+          cover: false,
+          music: {
+            active: true,
+            select: false,
+            songs: false,
+            albums: false,
+          },
+          games: false,
+          settings: false,
+        })
         const bgr = document.getElementById('bgr');
+        
         bgr.style.backgroundImage =
           "url('https://images.unsplash.com/photo-1535992165812-68d1861aa71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=637&q=80')";
       }
@@ -204,6 +229,22 @@ class App extends Component {
 
   menuback = (props) => {
     console.log('clicked');
+    if(this.state.music.active){
+
+      this.setState({
+        main: false,
+        cover: false,
+        music: {
+          active: !this.state.music.select,
+          select: !this.state.music.select,
+          songs: false,
+          albums: false,
+        },
+        games: false,
+        settings: false,
+      });
+
+    }else{
     this.setState({
       main: true,
       cover: false,
@@ -218,6 +259,7 @@ class App extends Component {
     });
     const bgr = document.getElementById('bgr');
     bgr.style.backgroundImage = '';
+  }
   };
 
   render() {
