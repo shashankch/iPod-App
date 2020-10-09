@@ -12,9 +12,15 @@ class Controls extends Component {
           <div className='btn-menu' onClick={this.props.menuback}>
             Menu
           </div>
-          <div className='btn-prev'>prev</div>
-          <div className='btn-next'>next</div>
-          <div className='btn-play'>play/pause</div>
+          <div className='btn-prev'>
+          <img height='30px' width='30px'  src='https://www.flaticon.com/svg/static/icons/svg/26/26309.svg'/>
+          </div>
+          <div className='btn-next'>
+            <img height='30px' width='30px'  src='https://www.flaticon.com/svg/static/icons/svg/26/26309.svg'/>
+          </div>
+          <div className='btn-play'>
+          <img height='30px' width='30px'  src='https://www.flaticon.com/svg/static/icons/svg/26/26309.svg'/>
+          </div>
         </div>
         <div className='btn-press' onClick={this.props.musicMenufun}></div>
       </div>
