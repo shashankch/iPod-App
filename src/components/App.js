@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      main: true,
+      main: false,
       cover: false,
       music: {
         active: false,
