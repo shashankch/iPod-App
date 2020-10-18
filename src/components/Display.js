@@ -21,7 +21,7 @@ class Display extends Component {
         { select? (
           <div className='music-menu-container'>
             <ul className='music-options-list'>
-              <span className='title'>Music</span>
+              <span className='title2'>Music</span>
               <li className={songs ? 'active-tab' : ''}>All Songs</li>
 
               <li className={albums ? 'active-tab' : ''}>Albums</li>
