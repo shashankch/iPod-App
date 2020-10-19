@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* styling for app component */
 .App {
   height: 580px;
   width: 340px;
@@ -24,6 +25,7 @@ body {
         bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.2)));
 }
 
+/* styling for display container */
 .display-container {
   display: flex;
   border: 4px solid black;
@@ -38,6 +40,7 @@ body {
   box-shadow: inset -1px 10px 56px -28px rgba(0, 0, 0, 0.75);
 }
 
+/* styling for ipod main controls container */
 .controls-container {
   display: flex;
   /* background-color: #c5c6cb; */
@@ -46,6 +49,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* styling for circular control buttons */
 .circular-container {
   position: relative;
   display: flex;
@@ -58,15 +63,18 @@ body {
   draggable: 'false';
 }
 
+/* style for circular press button */
 .btn-press {
   position: absolute;
-  border: 2px solid skyblue;
+  /* border: 2px solid skyblue; */
   background-color: #c5c6cb;
   border-radius: 50%;
   height: 80px;
   width: 80px;
+  box-shadow: inset 0 0 10px #c5c6cb;
 }
 
+/* styling for play/pause/next/prev buttons */
 .btn-play {
   position: absolute;
   color: #c5c6cb;
@@ -91,6 +99,7 @@ body {
   /* color: #c5c6cb; */
 }
 
+/* styling for screen menu container */
 .display-menu-container,
 .music-menu-container {
   border-radius: 8px 0 0 8px;
@@ -99,6 +108,7 @@ body {
   background-color: white;
 }
 
+/* styling for music and main menu on display  */
 .main-options-list {
   /* display: none; */
   list-style: none;
@@ -120,6 +130,7 @@ body {
   margin: 35px 25px;
 }
 
+/* style for selected menu option */
 .active-tab {
   padding: 5px;
   background-color: #3498db;
@@ -130,6 +141,7 @@ body {
   content: '  ›';
 }
 
+/* style for menu headings */
 .title {
   margin: 20px;
   font-weight: 900;

@@ -3,9 +3,11 @@ import Controls from './Controls';
 import Display from './Display';
 import ZingTouch from 'zingtouch';
 
+// main app component with state and methods
 class App extends Component {
   constructor() {
     super();
+    // app state to check status of options/menu selection
     this.state = {
       main: false,
       cover: false,
@@ -20,6 +22,8 @@ class App extends Component {
     };
   }
 
+  // method to rotate menu option/select using zing touch feature on circular region.
+  // changing state based on the angle and current active option
   rotatefun = (props) => {
     // console.log(this);
     // var containerElement = document.getElementById('controls-container');
@@ -119,6 +123,7 @@ class App extends Component {
     });
   };
 
+  // method to change the background display on menu option selection and update in state.
   musicMenufun = (props) => {
     //console.log('clicked');
     const { cover, music, games, settings } = this.state;
@@ -152,7 +157,7 @@ class App extends Component {
           },
           games: false,
           settings: false,
-        })
+        });
         const bgr = document.getElementById('bgr');
         bgr.style.backgroundImage =
           "url('https://images.pexels.com/photos/5077423/pexels-photo-5077423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')";
@@ -169,9 +174,9 @@ class App extends Component {
           },
           games: false,
           settings: false,
-        })
+        });
         const bgr = document.getElementById('bgr');
-        
+
         bgr.style.backgroundImage =
           "url('https://images.unsplash.com/photo-1535992165812-68d1861aa71e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=637&q=80')";
       }
@@ -227,10 +232,10 @@ class App extends Component {
     }
   };
 
+  // method to check menu status - main or music menu and control back
   menuback = (props) => {
     console.log('clicked');
-    if(this.state.music.active){
-
+    if (this.state.music.active) {
       this.setState({
         main: false,
         cover: false,
@@ -243,27 +248,27 @@ class App extends Component {
         games: false,
         settings: false,
       });
-
-    }else{
-    this.setState({
-      main: true,
-      cover: false,
-      music: {
-        active: false,
-        select: false,
-        songs: false,
-        albums: false,
-      },
-      games: false,
-      settings: false,
-    });
-    const bgr = document.getElementById('bgr');
-    bgr.style.backgroundImage = '';
-  }
+    } else {
+      this.setState({
+        main: true,
+        cover: false,
+        music: {
+          active: false,
+          select: false,
+          songs: false,
+          albums: false,
+        },
+        games: false,
+        settings: false,
+      });
+      const bgr = document.getElementById('bgr');
+      bgr.style.backgroundImage = '';
+    }
   };
 
   render() {
     return (
+      //rendering display and container components
       <div className='App'>
         <Display values={this.state} />
 
